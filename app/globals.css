@@ -1,26 +1,117 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #292524;
 }
 
 @theme inline {
-  --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic",
+    sans-serif;
+}
+
+@keyframes toast-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}
+
+.animate-toast {
+  animation: toast-pop 3.2s ease forwards;
+}
+
+@keyframes mascot-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.03, 0.97);
+  }
+}
+
+.animate-mascot-float {
+  animation: mascot-float 2s ease-in-out infinite;
+}
+
+@keyframes mascot-blink {
+  0%,
+  85%,
+  100% {
+    transform: scaleY(1);
+  }
+  90% {
+    transform: scaleY(0.1);
+  }
+}
+
+.animate-mascot-blink {
+  animation: mascot-blink 3s ease-in-out infinite;
+}
+
+@keyframes sticker-shine-sweep {
+  0%,
+  35% {
+    transform: translate(-16px, -16px) rotate(20deg);
+  }
+  65%,
+  100% {
+    transform: translate(16px, 16px) rotate(20deg);
+  }
+}
+
+.sticker-shine-sweep {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sticker-shine-sweep 3.5s ease-in-out infinite;
+}
+
+@keyframes sticker-hop-in {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(-18px) scale(1.05);
+  }
+  50% {
+    transform: translateY(0) scale(0.96);
+  }
+  65% {
+    transform: translateY(-8px) scale(1.02);
+  }
+  80% {
+    transform: translateY(0) scale(0.99);
+  }
+  90% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-sticker-hop {
+  animation: sticker-hop-in 0.7s cubic-bezier(0.33, 1, 0.68, 1) both;
 }
