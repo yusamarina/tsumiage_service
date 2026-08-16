@@ -32,7 +32,7 @@ export async function buildMockSummary(entries: LogEntry[]): Promise<SummarySect
   const intro = `${formatDate(first.date)}から${formatDate(last.date)}までの${entries.length}件の記録を読み返すと、いくつか繰り返し出てくるパターンがあります。`;
 
   if (matched.length === 0) {
-    return [{ title: "", body: `${intro}まだ明確な傾向は見えていませんが、記録が増えるほど積み上がりが見えやすくなります。` }];
+    return [{ title: "", body: `${intro}まだ明確な傾向は見えていませんが、記録が増えるほどつみあがりが見えやすくなります。` }];
   }
 
   const body = matched

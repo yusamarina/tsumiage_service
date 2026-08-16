@@ -38,7 +38,7 @@ export default function SplashScreen({ onDone }: { onDone: () => void }) {
         <MascotFace className="h-24 w-24 drop-shadow-[0_10px_25px_rgba(0,0,0,0.15)]" />
         <StickerWordmark animated />
         <p className="max-w-xs px-6 text-center text-sm font-medium text-stone-600">
-          今日やったこと、ひとつだけ書けばいい。あとは積み上がるのを待つだけ。
+          今日やったこと、ひとつだけ書けばいい。あとはつみあがるのを待つだけ。
         </p>
       </div>
     </div>

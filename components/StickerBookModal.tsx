@@ -58,7 +58,7 @@ export default function StickerBookModal({
         </p>
 
         <div className="mt-3 rounded-2xl border border-white/70 bg-white/45 p-3">
-          <p className="mb-1.5 text-xs font-medium text-amber-900/60">積み上げの節目</p>
+          <p className="mb-1.5 text-xs font-medium text-amber-900/60">つみあげの節目</p>
           <div className="grid grid-cols-6 gap-2 sm:grid-cols-8">
             {BADGES.map((badge) => {
               const earned = count >= badge.threshold;

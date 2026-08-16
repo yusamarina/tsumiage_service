@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "つみあげ | 日々の記録から気づく成長ログ",
-  description: "今日の1つを記録するだけで、気づかないうちに積み上がった成長をAIが見つけてくれるログアプリ",
+  description: "今日の1つを記録するだけで、気づかないうちにつみあがった成長をAIが見つけてくれるログアプリ",
   robots: {
     index: false,
     follow: false,

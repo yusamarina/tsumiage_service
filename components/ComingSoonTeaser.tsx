@@ -4,7 +4,7 @@ import MascotFace from "./MascotFace";
 // シール帳の「得意分野」欄は実テーマ5種+未発見枠15種の計20枠(StickerBookModal/BadgeCollectionと同じ数え方)
 const TOTAL_THEME_BADGES = THEMES.length + MYSTERY_ICON_IDS.length;
 
-// 「みんなの積み上げ」構想の予告。実装はまだなく、方向性を示すだけの控えめな見た目にする
+// 「みんなのつみあげ」構想の予告。実装はまだなく、方向性を示すだけの控えめな見た目にする
 // 個別の記録内容(生の日報テキスト)はプライバシー上見せず、属性レベルの情報にとどめる想定
 const SAMPLE_PEERS = [
   {
@@ -43,13 +43,13 @@ export default function ComingSoonTeaser() {
   return (
     <div className="relative overflow-hidden rounded-[2rem] border border-dashed border-stone-300/80 bg-white/20 p-5 backdrop-blur-xl sm:p-6">
       <div className="flex flex-wrap items-center gap-2">
-        <h2 className="text-sm font-semibold text-stone-500">みんなの積み上げ</h2>
+        <h2 className="text-sm font-semibold text-stone-500">みんなのつみあげ</h2>
         <span className="whitespace-nowrap rounded-full bg-gradient-to-r from-amber-400 to-yellow-500 px-2 py-0.5 text-[10px] font-semibold text-white shadow-sm shadow-amber-500/30">
           Pro限定
         </span>
       </div>
       <p className="mt-2 text-xs leading-relaxed text-stone-500">
-        同じ職種の人が、どんな仕事を積み上げてスキルを伸ばしているかを覗ける機能を検討中です。積み上げの記録が、次のキャリアを考えるヒントになる未来を目指しています。
+        同じ職種の人が、どんな仕事をつみあげてスキルを伸ばしているかを覗ける機能を検討中です。つみあげの記録が、次のキャリアを考えるヒントになる未来を目指しています。
       </p>
 
       <div className="relative mt-4 space-y-2 opacity-70 blur-[0.5px]" aria-hidden>
@@ -63,7 +63,7 @@ export default function ComingSoonTeaser() {
               <span className="font-semibold text-stone-600">{peer.role}</span>
               <div className="mt-1 flex flex-wrap gap-1.5">
                 <span className="inline-block whitespace-nowrap rounded-full bg-stone-200/70 px-2 py-0.5 text-[10px] text-stone-500">
-                  積み上げ {peer.count}件
+                  つみあげ {peer.count}件
                 </span>
                 <span className="inline-block whitespace-nowrap rounded-full bg-stone-200/70 px-2 py-0.5 text-[10px] text-stone-500">
                   想定年収帯 {peer.salaryBand}
@@ -73,10 +73,10 @@ export default function ComingSoonTeaser() {
                 </span>
               </div>
               <p className="mt-1.5 text-stone-500">
-                メインの積み上げ: <span className="font-medium text-stone-600">{peer.mainFocus}</span>
+                メインのつみあげ: <span className="font-medium text-stone-600">{peer.mainFocus}</span>
               </p>
               <p className="mt-0.5 text-stone-500">
-                似ている積み上げ内容: {peer.similarWork.join(" / ")}
+                似ているつみあげ内容: {peer.similarWork.join(" / ")}
               </p>
             </div>
           </div>

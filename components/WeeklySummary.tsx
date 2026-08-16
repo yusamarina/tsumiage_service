@@ -20,7 +20,7 @@ export default function WeeklySummary({ entries }: { entries: LogEntry[] }) {
 
   return (
     <div>
-      <h2 className="text-sm font-semibold text-stone-600">積み上げの振り返り</h2>
+      <h2 className="text-sm font-semibold text-stone-600">つみあげの振り返り</h2>
 
       <button
         onClick={handleClick}
@@ -88,7 +88,7 @@ export default function WeeklySummary({ entries }: { entries: LogEntry[] }) {
             </div>
           ) : (
             <p className="text-sm text-stone-500">
-              記録が積み上がってきたら、気づいていない成長パターンをAIが見つけます。
+              記録がつみあがってきたら、気づいていない成長パターンをAIが見つけます。
             </p>
           )}
         </div>

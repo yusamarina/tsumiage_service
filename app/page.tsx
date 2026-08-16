@@ -71,7 +71,7 @@ export default function Home() {
         <div className="min-w-0 flex-1">
           <StickerWordmark />
           <p className="mt-3 text-sm font-medium text-stone-600 lg:text-base">
-            今日やったこと、ひとつだけ書けばいい。あとは積み上がるのを待つだけ。
+            今日やったこと、ひとつだけ書けばいい。あとはつみあがるのを待つだけ。
           </p>
         </div>
         <nav className="pt-2">
