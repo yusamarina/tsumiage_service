@@ -7,17 +7,28 @@ import StickerWordmark from "./StickerWordmark";
 const VISIBLE_MS = 2400;
 const FADE_MS = 500;
 
-export default function SplashScreen({ onDone }: { onDone: () => void }) {
+export default function SplashScreen({
+  onFadeStart,
+  onDone,
+}: {
+  onFadeStart: () => void;
+  onDone: () => void;
+}) {
   const [fading, setFading] = useState(false);
 
   useEffect(() => {
-    const fadeTimer = setTimeout(() => setFading(true), VISIBLE_MS);
+    // フェード開始と同時に裏でオンボーディングを表示しておくことで、フェード中に
+    // 透けて見えるのが素のホーム画面ではなくオンボーディングの背景になるようにする
+    const fadeTimer = setTimeout(() => {
+      setFading(true);
+      onFadeStart();
+    }, VISIBLE_MS);
     const doneTimer = setTimeout(onDone, VISIBLE_MS + FADE_MS);
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(doneTimer);
     };
-  }, [onDone]);
+  }, [onFadeStart, onDone]);
 
   return (
     <div

@@ -60,10 +60,8 @@ export default function Home() {
     <main className="mx-auto min-h-screen max-w-6xl px-4 py-10 sm:px-8 lg:py-14">
       {showSplash && (
         <SplashScreen
-          onDone={() => {
-            setShowSplash(false);
-            setShowOnboarding(true);
-          }}
+          onFadeStart={() => setShowOnboarding(true)}
+          onDone={() => setShowSplash(false)}
         />
       )}
       {showOnboarding && <OnboardingModal onClose={() => setShowOnboarding(false)} />}
