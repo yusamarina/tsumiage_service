@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useEntries } from "@/lib/useEntries";
 import { useProgress } from "@/lib/useProgress";
 import { addEntry, clearAllData, hasRecordedOnce } from "@/lib/store";
@@ -37,6 +37,13 @@ export default function Home() {
     queueMicrotask(() => setShowSplash(true));
   }, []);
 
+  // SplashScreen側のuseEffectがこの2つを依存配列に持つため、インライン関数のまま渡すと
+  // 親の再レンダリングのたびに関数の参照が変わり、タイマーが延々とリセットされ続けてしまう
+  // (結果、閉じたはずのオンボーディングが数秒後に再度開く不具合になっていた)。
+  // useCallbackで参照を固定することでこれを防ぐ。
+  const handleSplashFadeStart = useCallback(() => setShowOnboarding(true), []);
+  const handleSplashDone = useCallback(() => setShowSplash(false), []);
+
   function handleAdd(entry: { date: string; task: string; reflection: string }) {
     const countBefore = entries.length;
     addEntry(entry);
@@ -58,12 +65,7 @@ export default function Home() {
 
   return (
     <main className="mx-auto min-h-screen max-w-6xl px-4 py-10 sm:px-8 lg:py-14">
-      {showSplash && (
-        <SplashScreen
-          onFadeStart={() => setShowOnboarding(true)}
-          onDone={() => setShowSplash(false)}
-        />
-      )}
+      {showSplash && <SplashScreen onFadeStart={handleSplashFadeStart} onDone={handleSplashDone} />}
       {showOnboarding && <OnboardingModal onClose={() => setShowOnboarding(false)} />}
       <header className="mb-10 flex items-start justify-between gap-4">
         <div className="min-w-0 flex-1">

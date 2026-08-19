@@ -22,16 +22,8 @@ export default function WeeklySummary({ entries }: { entries: LogEntry[] }) {
     <div>
       <h2 className="text-sm font-semibold text-stone-600">つみあげの振り返り</h2>
 
-      <button
-        onClick={handleClick}
-        disabled={loading || entries.length === 0}
-        className="mt-3 w-full whitespace-nowrap rounded-full bg-gradient-to-r from-violet-600 to-pink-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-violet-500/40 transition hover:scale-[1.02] hover:shadow-xl hover:shadow-violet-500/50 disabled:cursor-not-allowed disabled:from-stone-200 disabled:to-stone-200 disabled:text-stone-400 disabled:shadow-none disabled:hover:scale-100 sm:w-auto"
-      >
-        {loading ? "振り返り中…" : "AIに振り返ってもらう"}
-      </button>
-
       {summary && (
-        <div className="mt-4 space-y-3">
+        <div className="mt-3 space-y-3">
           {summary.map((section, i) => {
             const isProSection = section.title === "次に伸ばすと良い分野";
 
@@ -93,6 +85,14 @@ export default function WeeklySummary({ entries }: { entries: LogEntry[] }) {
           )}
         </div>
       )}
+
+      <button
+        onClick={handleClick}
+        disabled={loading || entries.length === 0}
+        className="mt-4 w-full whitespace-nowrap rounded-full bg-gradient-to-r from-violet-600 to-pink-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-violet-500/40 transition hover:scale-[1.02] hover:shadow-xl hover:shadow-violet-500/50 disabled:cursor-not-allowed disabled:from-stone-200 disabled:to-stone-200 disabled:text-stone-400 disabled:shadow-none disabled:hover:scale-100 sm:w-auto"
+      >
+        {loading ? "振り返り中…" : "AIに振り返ってもらう"}
+      </button>
 
       <p className="mt-4 border-t border-stone-200/60 pt-3 text-[11px] text-stone-500">
         ※現在はデモ用に、記録内容を読み取る簡易ロジックで振り返り文を生成しています。将来的には、この部分をClaude

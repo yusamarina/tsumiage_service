@@ -33,7 +33,7 @@ export default function SplashScreen({
   return (
     <div
       data-testid="splash-screen"
-      className={`fixed inset-0 z-[100] overflow-hidden transition-opacity duration-500 ${
+      className={`pointer-events-none fixed inset-0 z-[100] overflow-hidden transition-opacity duration-500 ${
         fading ? "opacity-0" : "opacity-100"
       }`}
     >
