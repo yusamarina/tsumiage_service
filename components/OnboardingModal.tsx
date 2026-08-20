@@ -9,7 +9,7 @@ const STEPS = [
   "記録が貯まるとAIが振り返り!",
 ];
 
-const PRO_FEATURES = ["AIが次にやるといいことを教えてくれます", "他の人のつみあげの特徴や職種などがわかります"];
+export const PRO_FEATURES = ["AIが次にやるといいことを教えてくれます", "他の人のつみあげの特徴や職種などがわかります"];
 
 export default function OnboardingModal({ onClose }: { onClose: () => void }) {
   return createPortal(

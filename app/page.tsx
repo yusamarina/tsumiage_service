@@ -16,7 +16,7 @@ import GlassCard from "@/components/GlassCard";
 import StickerWordmark from "@/components/StickerWordmark";
 import InfoModal from "@/components/InfoModal";
 import SplashScreen from "@/components/SplashScreen";
-import OnboardingModal from "@/components/OnboardingModal";
+import OnboardingModal, { PRO_FEATURES } from "@/components/OnboardingModal";
 import { UserIcon } from "@/components/icons";
 
 type InfoPage = "mypage" | "terms" | "privacy" | "commerce" | null;
@@ -131,8 +131,30 @@ export default function Home() {
         <InfoModal title="マイページ" onClose={closeInfoModal}>
           <p>
             このデモにはログイン機能がなく、記録はすべてお使いのブラウザ内にのみ保存されています。
-            実際のリリース時には、ここでプロフィールや通知設定、Proプランの契約状況などを管理できるようになる想定です。
+            実際のリリース時には、ここでプロフィールや通知設定なども管理できるようになる想定です。
           </p>
+
+          <div className="mt-5 border-t border-stone-200/80 pt-4">
+            <p className="text-xs font-semibold text-stone-600">現在のプラン</p>
+            <span className="mt-2 inline-block rounded-full border border-stone-200 bg-stone-100 px-2.5 py-1 text-xs font-medium text-stone-600">
+              無料プラン
+            </span>
+          </div>
+
+          <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50/70 p-3.5">
+            <span className="inline-block whitespace-nowrap rounded-full bg-gradient-to-r from-amber-400 to-yellow-500 px-2 py-0.5 text-[10px] font-semibold text-white">
+              Proプラン 月額500円(税込)
+            </span>
+            <ul className="mt-2 space-y-1.5">
+              {PRO_FEATURES.map((feature, i) => (
+                <li key={i} className="flex items-start gap-1.5 text-sm leading-snug text-stone-600">
+                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-amber-500" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-2 text-xs text-stone-500">このデモではプラン変更(決済)機能は実装していません。</p>
+          </div>
 
           <div className="mt-5 border-t border-stone-200/80 pt-4">
             <p className="text-xs font-semibold text-stone-600">退会</p>
