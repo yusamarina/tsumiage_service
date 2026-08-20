@@ -28,7 +28,7 @@ export default function OnboardingModal({ onClose }: { onClose: () => void }) {
         <div className="mt-5 space-y-3 text-left">
           {STEPS.map((step, i) => (
             <div key={i} className="flex items-start gap-2.5">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-pink-500 to-orange-400 text-[10px] font-bold text-white">
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-indigo-600 to-teal-400 text-[10px] font-bold text-white">
                 {i + 1}
               </span>
               <p className="text-sm leading-snug text-stone-600">{step}</p>
@@ -52,7 +52,7 @@ export default function OnboardingModal({ onClose }: { onClose: () => void }) {
 
         <button
           onClick={onClose}
-          className="mt-6 w-full rounded-full bg-gradient-to-r from-pink-500 to-orange-400 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:opacity-90"
+          className="mt-6 w-full rounded-full bg-gradient-to-r from-indigo-600 to-teal-400 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:opacity-90"
         >
           始める
         </button>

@@ -41,8 +41,8 @@ export default function SplashScreen({
           ヘッドレスChromiumのスクリーンショットで文字が描画されない不具合を確認したため) */}
       <div aria-hidden className="absolute inset-0 bg-[#f6f5f3]">
         <div className="absolute -left-40 -top-40 h-[26rem] w-[26rem] rounded-full bg-violet-400/35 blur-[110px]" />
-        <div className="absolute -right-32 top-1/4 h-[30rem] w-[30rem] rounded-full bg-pink-400/30 blur-[120px]" />
-        <div className="absolute bottom-[-8rem] left-1/4 h-[26rem] w-[26rem] rounded-full bg-orange-300/30 blur-[110px]" />
+        <div className="absolute -right-32 top-1/4 h-[30rem] w-[30rem] rounded-full bg-indigo-400/30 blur-[120px]" />
+        <div className="absolute bottom-[-8rem] left-1/4 h-[26rem] w-[26rem] rounded-full bg-teal-300/30 blur-[110px]" />
       </div>
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center gap-5">

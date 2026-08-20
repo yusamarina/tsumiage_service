@@ -39,7 +39,7 @@ export default function WeeklySummary({ entries }: { entries: LogEntry[] }) {
               return (
                 <div key={i} className="rounded-2xl border border-amber-200 bg-amber-50/60 p-3.5">
                   <div className="flex flex-wrap items-center gap-2">
-                    <p className="text-xs font-semibold text-rose-500">{section.title}</p>
+                    <p className="text-xs font-semibold text-indigo-600">{section.title}</p>
                     <span className="whitespace-nowrap rounded-full bg-gradient-to-r from-amber-400 to-yellow-500 px-2 py-0.5 text-[10px] font-semibold text-white shadow-sm shadow-amber-500/30">
                       Pro限定
                     </span>
@@ -61,7 +61,7 @@ export default function WeeklySummary({ entries }: { entries: LogEntry[] }) {
               <div key={i}>
                 {section.title && (
                   <div className="mb-1 flex items-center justify-between gap-2">
-                    <p className="text-xs font-semibold text-rose-500">{section.title}</p>
+                    <p className="text-xs font-semibold text-indigo-600">{section.title}</p>
                     {isCopyable && (
                       <button
                         type="button"
@@ -93,13 +93,13 @@ export default function WeeklySummary({ entries }: { entries: LogEntry[] }) {
       {!summary && !loading && (
         <div className="mt-3">
           {detectedThemes.length > 0 ? (
-            <div className="rounded-2xl border border-rose-100 bg-gradient-to-br from-rose-50/80 to-orange-50/60 p-3.5">
+            <div className="rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50/80 to-teal-50/60 p-3.5">
               <p className="text-sm font-medium text-stone-600">記録の中から、すでにこんな傾向が見つかっています</p>
               <div className="mt-2 flex flex-wrap gap-1.5">
                 {detectedThemes.map((theme) => (
                   <span
                     key={theme.shortLabel}
-                    className="whitespace-nowrap rounded-full border border-rose-200 bg-white px-2.5 py-1 text-xs font-medium text-rose-500"
+                    className="whitespace-nowrap rounded-full border border-indigo-200 bg-white px-2.5 py-1 text-xs font-medium text-indigo-600"
                   >
                     {theme.shortLabel}
                   </span>
@@ -120,7 +120,7 @@ export default function WeeklySummary({ entries }: { entries: LogEntry[] }) {
       <button
         onClick={handleClick}
         disabled={loading || entries.length === 0}
-        className="mt-4 w-full whitespace-nowrap rounded-full bg-gradient-to-r from-violet-600 to-pink-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-violet-500/40 transition hover:scale-[1.02] hover:shadow-xl hover:shadow-violet-500/50 disabled:cursor-not-allowed disabled:from-stone-200 disabled:to-stone-200 disabled:text-stone-400 disabled:shadow-none disabled:hover:scale-100 sm:w-auto"
+        className="mt-4 w-full whitespace-nowrap rounded-full bg-gradient-to-r from-teal-400 to-indigo-600 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-indigo-600/40 transition hover:scale-[1.02] hover:shadow-xl hover:shadow-indigo-600/50 disabled:cursor-not-allowed disabled:from-stone-200 disabled:to-stone-200 disabled:text-stone-400 disabled:shadow-none disabled:hover:scale-100 sm:w-auto"
       >
         {loading ? "振り返り中…" : "AIに振り返ってもらう"}
       </button>

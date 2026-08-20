@@ -68,7 +68,7 @@ export default function ComingSoonTeaser() {
                 <span className="inline-block whitespace-nowrap rounded-full bg-stone-200/70 px-2 py-0.5 text-[10px] text-stone-500">
                   想定年収帯 {peer.salaryBand}
                 </span>
-                <span className="inline-block whitespace-nowrap rounded-full bg-rose-100/70 px-2 py-0.5 text-[10px] text-rose-500">
+                <span className="inline-block whitespace-nowrap rounded-full bg-indigo-100/70 px-2 py-0.5 text-[10px] text-indigo-600">
                   得意分野バッジ {peer.themeBadgeCount}/{TOTAL_THEME_BADGES}
                 </span>
               </div>

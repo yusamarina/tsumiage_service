@@ -106,7 +106,7 @@ export default function LogTimeline({ entries }: { entries: LogEntry[] }) {
                                 placeholder="例:新機能の要件をチームに説明した"
                                 rows={2}
                                 maxLength={80}
-                                className="w-full resize-none rounded-xl border border-white/70 bg-white/80 px-3 py-2 text-sm text-stone-800 focus:border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-200"
+                                className="w-full resize-none rounded-xl border border-white/70 bg-white/80 px-3 py-2 text-sm text-stone-800 focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
                               />
                             </div>
                             <div>
@@ -122,14 +122,14 @@ export default function LogTimeline({ entries }: { entries: LogEntry[] }) {
                                 rows={2}
                                 maxLength={100}
                                 placeholder="例:理由を聞いてから話せた"
-                                className="w-full resize-none rounded-xl border border-white/70 bg-white/80 px-3 py-2 text-sm text-stone-800 placeholder:text-stone-500 focus:border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-200"
+                                className="w-full resize-none rounded-xl border border-white/70 bg-white/80 px-3 py-2 text-sm text-stone-800 placeholder:text-stone-500 focus:border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-200"
                               />
                             </div>
                             <div className="flex gap-2">
                               <button
                                 onClick={() => saveEdit(entry.id)}
                                 disabled={!editTask.trim()}
-                                className="rounded-full bg-gradient-to-r from-pink-500 to-orange-400 px-4 py-1.5 text-xs font-semibold text-white shadow-sm disabled:cursor-not-allowed disabled:from-stone-200 disabled:to-stone-200 disabled:text-stone-400"
+                                className="rounded-full bg-gradient-to-r from-indigo-600 to-teal-400 px-4 py-1.5 text-xs font-semibold text-white shadow-sm disabled:cursor-not-allowed disabled:from-stone-200 disabled:to-stone-200 disabled:text-stone-400"
                               >
                                 保存
                               </button>
@@ -150,7 +150,7 @@ export default function LogTimeline({ entries }: { entries: LogEntry[] }) {
                                   {tags.map((tag) => (
                                     <span
                                       key={tag}
-                                      className="whitespace-nowrap rounded-full border border-rose-100 bg-rose-50 px-2 py-0.5 text-[10px] font-medium text-rose-500"
+                                      className="whitespace-nowrap rounded-full border border-indigo-100 bg-indigo-50 px-2 py-0.5 text-[10px] font-medium text-indigo-600"
                                     >
                                       {tag}
                                     </span>
@@ -159,7 +159,7 @@ export default function LogTimeline({ entries }: { entries: LogEntry[] }) {
                               )}
                             </div>
                             {entry.reflection && (
-                              <p className="mt-1.5 whitespace-pre-wrap border-l-2 border-rose-200/80 pl-2 text-sm text-stone-600">
+                              <p className="mt-1.5 whitespace-pre-wrap border-l-2 border-indigo-200/80 pl-2 text-sm text-stone-600">
                                 {entry.reflection}
                               </p>
                             )}

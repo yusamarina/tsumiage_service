@@ -2,13 +2,13 @@ import { LogEntry } from "@/lib/types";
 import { buildHeatmapColumns } from "@/lib/heatmap";
 import { formatDate } from "@/lib/date";
 
-// 単色ホヴ・単調な明度で組んだ順序尺度パレット(dataviz skillのvalidate_palette.jsで検証済み:
-// #f472b6 / #db2777 / #831843、白背景に対しライトエンドのコントラストも2:1超をクリア)
+// 単色・単調な明度で組んだ順序尺度パレット。以前のピンク系(#f472b6/#db2777/#831843、
+// dataviz skillで検証済み)と同じシェード段(400/600/900)のままインディゴ系に差し替え
 function colorFor(count: number): string {
   if (count <= 0) return "bg-stone-900/10 border border-white/50";
-  if (count === 1) return "bg-[#f472b6]";
-  if (count === 2) return "bg-[#db2777]";
-  return "bg-[#831843]";
+  if (count === 1) return "bg-[#818cf8]";
+  if (count === 2) return "bg-[#4f46e5]";
+  return "bg-[#312e81]";
 }
 
 const WEEKDAY_LABELS = ["日", "月", "火", "水", "木", "金", "土"];
@@ -47,9 +47,9 @@ export default function AccumulationHeatmap({ entries }: { entries: LogEntry[] }
       <div className="mt-3 flex items-center justify-end gap-1.5 text-[10px] text-stone-500">
         <span>少ない</span>
         <span className="h-2.5 w-2.5 rounded-sm bg-stone-900/10 border border-white/50" />
-        <span className="h-2.5 w-2.5 rounded-sm bg-[#f472b6]" />
-        <span className="h-2.5 w-2.5 rounded-sm bg-[#db2777]" />
-        <span className="h-2.5 w-2.5 rounded-sm bg-[#831843]" />
+        <span className="h-2.5 w-2.5 rounded-sm bg-[#818cf8]" />
+        <span className="h-2.5 w-2.5 rounded-sm bg-[#4f46e5]" />
+        <span className="h-2.5 w-2.5 rounded-sm bg-[#312e81]" />
         <span>多い</span>
       </div>
       <p className="mt-2 text-[11px] text-stone-500">直近12週間の記録</p>

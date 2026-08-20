@@ -1,7 +1,7 @@
 const CHARS = ["つ", "み", "あ", "げ"];
 const ROTATIONS = [-8, 6, -5, 9];
 const OFFSETS_Y = [0, -3, 2, -2];
-const COLORS = ["#ec4899", "#fb923c", "#f472b6", "#f59e0b"];
+const COLORS = ["#5457DE", "#31BFAE", "#818cf8", "#14b8a6"];
 
 function CharSticker({
   char,

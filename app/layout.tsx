@@ -21,11 +21,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
         <div
           aria-hidden
-          className="fixed -right-32 top-1/4 -z-10 h-[30rem] w-[30rem] rounded-full bg-pink-400/30 blur-[120px]"
+          className="fixed -right-32 top-1/4 -z-10 h-[30rem] w-[30rem] rounded-full bg-indigo-400/30 blur-[120px]"
         />
         <div
           aria-hidden
-          className="fixed bottom-[-8rem] left-1/4 -z-10 h-[26rem] w-[26rem] rounded-full bg-orange-300/30 blur-[110px]"
+          className="fixed bottom-[-8rem] left-1/4 -z-10 h-[26rem] w-[26rem] rounded-full bg-teal-300/30 blur-[110px]"
         />
         {children}
       </body>
