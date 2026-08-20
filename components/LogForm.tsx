@@ -51,9 +51,14 @@ export default function LogForm({ onSubmit }: Props) {
               className="w-full resize-none rounded-xl border border-white/70 bg-white/80 px-3 py-2 text-sm text-stone-800 placeholder:text-stone-500 focus:border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-200"
               maxLength={80}
             />
-            <span className={`mt-1 block text-right text-[10px] ${task.length >= 80 ? "text-rose-500" : "text-stone-500"}`}>
-              {task.length}/80
-            </span>
+            <div className="mt-1 flex items-center justify-end gap-2">
+              {task.length >= 80 && (
+                <p className="text-[10px] text-rose-500">これ以上入力できません(80文字まで)</p>
+              )}
+              <span className={`text-[10px] ${task.length >= 80 ? "text-rose-500" : "text-stone-500"}`}>
+                {task.length}/80
+              </span>
+            </div>
           </div>
           <div>
             <label className="mb-1 block text-xs text-stone-500">一言振り返り(任意)</label>
@@ -65,9 +70,14 @@ export default function LogForm({ onSubmit }: Props) {
               className="w-full resize-none rounded-xl border border-white/50 bg-white/60 px-3 py-2 text-sm text-stone-700 placeholder:text-stone-500 focus:border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-200"
               maxLength={100}
             />
-            <span className={`mt-1 block text-right text-[10px] ${reflection.length >= 100 ? "text-rose-500" : "text-stone-500"}`}>
-              {reflection.length}/100
-            </span>
+            <div className="mt-1 flex items-center justify-end gap-2">
+              {reflection.length >= 100 && (
+                <p className="text-[10px] text-rose-500">これ以上入力できません(100文字まで)</p>
+              )}
+              <span className={`text-[10px] ${reflection.length >= 100 ? "text-rose-500" : "text-stone-500"}`}>
+                {reflection.length}/100
+              </span>
+            </div>
           </div>
         </div>
         <div className="mt-4 flex justify-center">
