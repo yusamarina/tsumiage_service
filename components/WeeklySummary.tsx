@@ -4,10 +4,12 @@ import { useState } from "react";
 import { LogEntry } from "@/lib/types";
 import { buildMockSummary, SummarySection } from "@/lib/mockSummary";
 import { THEMES, themeEntryCount } from "@/lib/tags";
+import { CopyIcon, CheckIcon } from "./icons";
 
 export default function WeeklySummary({ entries }: { entries: LogEntry[] }) {
   const [summary, setSummary] = useState<SummarySection[] | null>(null);
   const [loading, setLoading] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const detectedThemes = THEMES.filter((theme) => themeEntryCount(theme, entries) > 0);
 
@@ -16,6 +18,12 @@ export default function WeeklySummary({ entries }: { entries: LogEntry[] }) {
     const result = await buildMockSummary(entries);
     setSummary(result);
     setLoading(false);
+  }
+
+  async function handleCopy(text: string) {
+    await navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
   }
 
   return (
@@ -47,10 +55,33 @@ export default function WeeklySummary({ entries }: { entries: LogEntry[] }) {
               );
             }
 
+            const isCopyable = section.title === "見つかった傾向";
+
             return (
               <div key={i}>
                 {section.title && (
-                  <p className="mb-1 text-xs font-semibold text-rose-500">{section.title}</p>
+                  <div className="mb-1 flex items-center justify-between gap-2">
+                    <p className="text-xs font-semibold text-rose-500">{section.title}</p>
+                    {isCopyable && (
+                      <button
+                        type="button"
+                        onClick={() => handleCopy(section.body)}
+                        className="flex shrink-0 items-center gap-1 rounded-full border border-stone-200 bg-white/70 px-2 py-0.5 text-[10px] font-medium text-stone-500 transition hover:bg-white"
+                      >
+                        {copied ? (
+                          <>
+                            <CheckIcon className="h-3 w-3" />
+                            コピーしました
+                          </>
+                        ) : (
+                          <>
+                            <CopyIcon className="h-3 w-3" />
+                            コピー
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
                 )}
                 <p className="whitespace-pre-wrap text-sm leading-relaxed text-stone-700">{section.body}</p>
               </div>

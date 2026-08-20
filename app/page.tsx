@@ -180,8 +180,19 @@ export default function Home() {
       )}
       {infoPage === "commerce" && (
         <InfoModal title="特定商取引法に基づく表記" onClose={closeInfoModal}>
-          このページは選考課題として作成したデモのため、特定商取引法に基づく実際の表記は掲載していません。
-          実際にProプランを提供する場合は、事業者名・所在地・連絡先・販売価格・支払い方法などをここに記載する想定です。
+          <p>
+            このページは選考課題として作成したデモのため、事業者名・所在地・連絡先などの実際の表記は掲載していません。販売価格のみ、想定している金額を記載しています。
+          </p>
+          <dl className="mt-4 space-y-2 text-stone-600">
+            <div className="flex gap-2">
+              <dt className="w-24 shrink-0 font-medium text-stone-500">販売価格</dt>
+              <dd>Proプラン 月額500円(税込)</dd>
+            </div>
+            <div className="flex gap-2">
+              <dt className="w-24 shrink-0 font-medium text-stone-500">支払い方法</dt>
+              <dd>クレジットカード決済(想定)</dd>
+            </div>
+          </dl>
         </InfoModal>
       )}
     </main>

@@ -42,12 +42,7 @@ export default function LogForm({ onSubmit }: Props) {
         </div>
         <div className="grid gap-3 sm:grid-cols-[2fr_1fr]">
           <div>
-            <div className="mb-1 flex items-baseline justify-between">
-              <label className="text-xs font-medium text-stone-500">今日やったこと</label>
-              <span className={`text-[10px] ${task.length >= 80 ? "text-rose-500" : "text-stone-500"}`}>
-                {task.length}/80
-              </span>
-            </div>
+            <label className="mb-1 block text-xs font-medium text-stone-500">今日やったこと</label>
             <textarea
               value={task}
               onChange={(e) => setTask(e.target.value)}
@@ -56,14 +51,12 @@ export default function LogForm({ onSubmit }: Props) {
               className="w-full resize-none rounded-xl border border-white/70 bg-white/80 px-3 py-2 text-sm text-stone-800 placeholder:text-stone-500 focus:border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-200"
               maxLength={80}
             />
+            <span className={`mt-1 block text-right text-[10px] ${task.length >= 80 ? "text-rose-500" : "text-stone-500"}`}>
+              {task.length}/80
+            </span>
           </div>
           <div>
-            <div className="mb-1 flex items-baseline justify-between">
-              <label className="text-xs text-stone-500">一言振り返り(任意)</label>
-              <span className={`text-[10px] ${reflection.length >= 100 ? "text-rose-500" : "text-stone-500"}`}>
-                {reflection.length}/100
-              </span>
-            </div>
+            <label className="mb-1 block text-xs text-stone-500">一言振り返り(任意)</label>
             <textarea
               value={reflection}
               onChange={(e) => setReflection(e.target.value)}
@@ -72,6 +65,9 @@ export default function LogForm({ onSubmit }: Props) {
               className="w-full resize-none rounded-xl border border-white/50 bg-white/60 px-3 py-2 text-sm text-stone-700 placeholder:text-stone-500 focus:border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-200"
               maxLength={100}
             />
+            <span className={`mt-1 block text-right text-[10px] ${reflection.length >= 100 ? "text-rose-500" : "text-stone-500"}`}>
+              {reflection.length}/100
+            </span>
           </div>
         </div>
         <div className="mt-4 flex justify-center">
